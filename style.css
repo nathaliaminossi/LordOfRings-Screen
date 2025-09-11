@@ -21,6 +21,25 @@ body {
   padding: 32px;
 }
 
+.img1 {
+  text-align: center;
+  margin-top: 20px; 
+  box-shadow: #caa83b ;
+}
+
+.img1 img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+ filter: drop-shadow(0 0 8px rgba(255, 217, 0, 0.623)) 
+          drop-shadow(0 0 15px rgba(218, 165, 32, 0.671));
+  border-radius: 8px;
+}
+
+
+
+
 .card {
   width: 100%;
   max-width: 900px;
@@ -51,7 +70,7 @@ body {
 
 
 h1 { font-size: 28px; color: var(--parchment); letter-spacing: 1px }
-p.text1 { color: var(--muted); max-width: 36ch; font-size: 14px }
+p.text1 { color: var(--muted); max-width: 36vw; font-size: 14px }
 
 
 form {
@@ -105,8 +124,8 @@ input:focus {
   mix-blend-mode: screen;
 }
 
-/* Responsividade */
-@media (max-width:880px) {
+
+@media (max-width:600px) {
   .card { grid-template-columns: 1fr; }
   .panel { padding: 28px 20px }
   form { padding: 24px }

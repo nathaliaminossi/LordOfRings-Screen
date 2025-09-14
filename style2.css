@@ -10,21 +10,33 @@
 html, body { height: 100% }
 
 body {
+
   font-family: 'Cinzel', serif;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(202,168,59,0.06), transparent 10%),
-              radial-gradient(900px 400px at 90% 90%, rgba(43,90,43,0.035), transparent 10%),
-              linear-gradient(180deg,var(--bg1) 0%, #12100f 100%);
-  color: var(--parchment);
+  color: #fff;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 32px;
+  align-items: center;
+
+  background: url("fundo1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
 }
 
 .card2 {
   width: 100%;
   max-width: 900px;
-  background: linear-gradient(180deg, rgba(47, 67, 41, 0.03), rgba(255,255,255,0.01));
+  background: linear-gradient(180deg, rgba(47, 67, 41, 0.662), rgba(255, 255, 255, 0.021));
   border: 1px solid rgba(202,168,59,0.12);
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(2,2,2,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
@@ -35,9 +47,10 @@ body {
 }
 
 
+
 .painel2 {
   padding: 48px 36px;
-  background: linear-gradient(180deg, rgba(53, 43, 33, 0.6), rgba(16,14,13,0.5));
+  background: linear-gradient(180deg, rgba(58, 70, 26, 0.6), rgba(16,14,13,0.5));
   border-right: 1px solid rgba(202,168,59,0.04);
   display: flex;
   flex-direction: column;
@@ -46,8 +59,10 @@ body {
   justify-content: center;
 }
 
+
+
 h1 { font-size: 28px; color: var(--parchment); letter-spacing: 1px }
-p.text1 { color: var(--muted); max-width: 36vw; font-size: 14px }
+p.text2 { color: var(--muted); max-width: 36vw; font-size: 14px }
 
 
 form {
@@ -56,13 +71,72 @@ form {
   background: linear-gradient(180deg, rgba(255,250,235,0.02), rgba(255,250,235,0.01));
 }
 
-.btn1 {
-    color: black;
-    background: linear-gradient(var(--gold)  );
+label { font-size: 13px; color: var(--parchment); margin-bottom: 6px }
+
+.field { display: flex; flex-direction: column; gap: 6px }
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(202,168,59,0.09);
+  background: rgba(255,255,255,0.02); color: var(--parchment); font-size: 14px;
+  outline: none; transition: box-shadow .18s, border-color .18s;
 }
 
-@media (max-width:600px) {
-  .card { grid-template-columns: 1fr; }
-  .panel { padding: 28px 20px }
+input::placeholder { color: rgba(255,255,255,0.25); font-family: inherit }
+
+input:focus {
+  border-color: rgba(202,168,59,0.35);
+  box-shadow: 0 6px 18px rgba(42,32,8,0.12) inset;
+}
+
+.register { display: flex; gap: 12px }
+.register .field { flex: 1 }
+
+.actions { display: flex; align-items: center; justify-content: space-between; margin-top: 6px }
+
+.btn1 {
+  background: linear-gradient(145deg, #c9a635, #ffd700);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn1:hover {
+  box-shadow: 0 0 15px #ffd700;
+  transform: scale(1.05);
+}
+
+
+@media (max-width:480px) {
+  .card2 { grid-template-columns: 1fr; }
+  .panel2 { padding: 28px 20px }
   form { padding: 24px }
+
+    p.text1 {
+    font-size: 12px;
+  }
+
+  .btn1 {
+    width: 100%; 
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .register {
+    flex-direction: column; /* campos embaixo do outro */
+    gap: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
 }

@@ -14,9 +14,7 @@
   </header>
     <main>
 
-      <div class="img1"> 
-        <img src="https://upload.wikimedia.org/wikipedia/pt/0/0c/The_Lord_of_the_Rings_logo.png" alt="">
-      </div>
+   
 <div class="card">
     <div class="painel">
     
@@ -25,7 +23,7 @@
 
     </div>
 
-    <form onsubmit="event.preventDefault(); alert('Conta criada — bem-vinda!');">
+    <form onsubmit="event.preventDefault(); alert('Created account — Welcome!');">
       <div style="position:relative">
         <label for="name">Name</label>
         <div class="field"><input id="name" name="name" type="text" placeholder="" required></div>
@@ -49,12 +47,14 @@
 
       <div class="actions">
         <button class="btn" type="submit">Create Account</button>
-        <button class="secondary" type="button" onclick="alert('Redirecionar para login (exemplo)')">Have a account</button>
+       
       </div>
-
+         <p class="switch">Already have an account? 
+        <a href="index2.html" id="toLogin">Sign in</a>
+      </p>
      
   </div>
     </main>
-  
+    <script src="screens.js"></script>
 </body>
 </html>
